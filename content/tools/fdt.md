@@ -1,16 +1,21 @@
 ---
 title: "fdt"
-description: "discord token validator and extractor"
+description: "discord token validator and extractor [basher package]"
 github: "https://github.com/gnomegl/fdt"
 install: "basher install gnomegl/fdt"
 category: "osint"
-date: 2025-09-09T23:27:23-04:00
+date: 2025-09-10T10:31:41-04:00
 ---
 
+## Installation
+
+```bash
+basher install gnomegl/fdt
+```
 
 ## Description
 
-discord token validator and extractor
+discord token validator and extractor [basher package]
 
 ## Usage
 

@@ -29,7 +29,7 @@
                  {{ end }}
             </nav>
             <div class="sidebar-footer">
-                {{ now.Format "15:04:05" }}<br>
+                <span id="system-clock">{{ now.Format "15:04:05" }}</span><br>
                 {{ .Site.Params.author }}
             </div>
         </aside>
@@ -117,6 +117,24 @@
             }
         });
     }
+
+    // Real-time clock
+    function updateClock() {
+        const clockElement = document.getElementById('system-clock');
+        if (clockElement) {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            clockElement.textContent = `${hours}:${minutes}:${seconds}`;
+        }
+    }
+
+    // Update clock immediately on load
+    updateClock();
+    
+    // Update clock every second
+    setInterval(updateClock, 1000);
     </script>
 </body>
 </html>

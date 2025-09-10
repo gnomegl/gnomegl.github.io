@@ -1,16 +1,21 @@
 ---
 title: "tdla"
-description: "telegram download assistant - tdl wrapper"
+description: "telegram download assistant - tdl wrapper [basher package]"
 github: "https://github.com/gnomegl/tdla"
 install: "basher install gnomegl/tdla"
 category: "osint"
-date: 2025-09-09T23:27:23-04:00
+date: 2025-09-10T10:31:41-04:00
 ---
 
+## Installation
+
+```bash
+basher install gnomegl/tdla
+```
 
 ## Description
 
-telegram download assistant - tdl wrapper
+telegram download assistant - tdl wrapper [basher package]
 
 ## Usage
 

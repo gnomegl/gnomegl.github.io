@@ -1,39 +1,29 @@
 ---
 title: "gitslurp"
-description: "Analyze GitHub user's commit history across repositories"
+description: "Git repository cloning and analysis tool"
 github: "https://github.com/gnomegl/gitslurp"
 install: "go install github.com/gnomegl/gitslurp@latest"
 type: "go"
+category: "osint"
+date: 2025-09-10T10:31:40-04:00
 ---
 
-OSINT tool to analyze GitHub user activity and highlights their contributions across repositories.
+## Installation
 
-## Features
+```bash
+go install github.com/gnomegl/gitslurp@latest
+```
 
-- User-centric analysis via GitHub username, email or organization
-- Comprehensive commit history across public repositories  
-- Visual highlighting with color-coding
-- Multiple identity support for different emails/names
-- Advanced secret detection powered by TruffleHog patterns
-- Interesting pattern detection (URLs, UUIDs, IPs)
-- Repository context showing own repos vs forks
-- Organization scanning capabilities
+## Description
 
+Git repository cloning and analysis tool
 
 ## Usage
 
 ```bash
-# Analyze user by username
-gitslurp soxoj
-
-# Search by email
-gitslurp user@example.com
-
-# Scan organization
-gitslurp -o myorganization
+gitslurp --help
 ```
 
-## Requirements
+## Source
 
-- Go 1.19+
-- GitHub API access (unauthenticated or with token)
+View the source code on [GitHub](https://github.com/gnomegl/gitslurp)

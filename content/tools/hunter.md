@@ -1,16 +1,21 @@
 ---
 title: "hunter"
-description: "hunter.io api client for email intelligence"
+description: "hunter.io api client for email intelligence [basher package]"
 github: "https://github.com/gnomegl/hunter"
 install: "basher install gnomegl/hunter"
 category: "osint"
-date: 2025-09-09T23:27:23-04:00
+date: 2025-09-10T10:31:41-04:00
 ---
 
+## Installation
+
+```bash
+basher install gnomegl/hunter
+```
 
 ## Description
 
-hunter.io api client for email intelligence
+hunter.io api client for email intelligence [basher package]
 
 ## Usage
 

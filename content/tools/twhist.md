@@ -1,16 +1,21 @@
 ---
 title: "twhist"
-description: "twitter history analyzer"
+description: "twitter history analyzer [basher package]"
 github: "https://github.com/gnomegl/twhist"
 install: "basher install gnomegl/twhist"
 category: "osint"
-date: 2025-09-09T23:27:23-04:00
+date: 2025-09-10T10:31:40-04:00
 ---
 
+## Installation
+
+```bash
+basher install gnomegl/twhist
+```
 
 ## Description
 
-twitter history analyzer
+twitter history analyzer [basher package]
 
 ## Usage
 

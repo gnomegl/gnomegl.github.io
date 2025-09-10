@@ -1,16 +1,21 @@
 ---
 title: "whoxy"
-description: "whoxy api client for domain intelligence"
+description: "whoxy api client for domain intelligence [basher package]"
 github: "https://github.com/gnomegl/whoxy"
 install: "basher install gnomegl/whoxy"
 category: "osint"
-date: 2025-09-09T23:27:23-04:00
+date: 2025-09-10T10:31:41-04:00
 ---
 
+## Installation
+
+```bash
+basher install gnomegl/whoxy
+```
 
 ## Description
 
-whoxy api client for domain intelligence
+whoxy api client for domain intelligence [basher package]
 
 ## Usage
 
