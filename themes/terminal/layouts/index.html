@@ -1,43 +1,47 @@
 {{ define "main" }}
 <div class="home-content">
-    <div class="content">
-        {{ .Content }}
+  <div class="content">{{ .Content }}</div>
+
+  <h2>Tool Catalog</h2>
+  <div class="tool-grid">
+    {{ range where .Site.RegularPages "Section" "tools" | first 12 }}
+    <div class="tool-card">
+      <div class="tool-name"><a href="{{ .Permalink }}">{{ .Title }}</a></div>
+      <div class="tool-desc">{{ .Params.description | truncate 60 }}</div>
+      <div class="tool-meta">
+        {{ if .Params.github }}<a href="{{ .Params.github }}">src</a>{{ end }}
+        {{ if .Params.category }}| {{ .Params.category }}{{ end }}
+      </div>
     </div>
-    
-    <h2>Tool Catalog</h2>
-    <div class="tool-grid">
-        {{ range where .Site.RegularPages "Section" "tools" | first 12 }}
-        <div class="tool-card">
-            <div class="tool-name"><a href="{{ .Permalink }}">{{ .Title }}</a></div>
-            <div class="tool-desc">{{ .Params.description | truncate 60 }}</div>
-            <div class="tool-meta">
-                {{ if .Params.github }}<a href="{{ .Params.github }}">src</a>{{ end }}
-                {{ if .Params.category }}| {{ .Params.category }}{{ end }}
-            </div>
-        </div>
-        {{ end }}
-    </div>
-    
-    <p><a href="/tools/">View all {{ len (where .Site.RegularPages "Section" "tools") }} tools →</a></p>
-    
-    <h2>Recent Updates</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Date</th>
-                <th>Tool</th>
-                <th>Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            {{ range first 5 .Site.RegularPages }}
-            <tr>
-                <td>{{ .Date.Format "2006-01-02" }}</td>
-                <td><a href="{{ .Permalink }}">{{ .Title }}</a></td>
-                <td>{{ .Params.description | truncate 50 }}</td>
-            </tr>
-            {{ end }}
-        </tbody>
-    </table>
+    {{ end }}
+  </div>
+
+  <p>
+    <a href="/tools/"
+      >View all {{ len (where .Site.RegularPages "Section" "tools") }} tools
+      →</a
+    >
+  </p>
+
+  <h2>Recent Updates</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Tool</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{ range first 5 .Site.RegularPages }}
+      <tr>
+        <td>{{ .Date.Format "2006-01-02" }}</td>
+        <td><a href="{{ .Permalink }}">{{ .Title }}</a></td>
+        <td>{{ .Params.description | truncate 50 }}</td>
+      </tr>
+      {{ end }}
+    </tbody>
+  </table>
 </div>
 {{ end }}
+

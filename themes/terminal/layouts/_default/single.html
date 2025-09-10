@@ -1,36 +1,40 @@
 {{ define "main" }}
 <article>
-    <h1>{{ .Title }}</h1>
-    
-    {{ if or .Params.description .Params.github .Params.install }}
-    <div class="box">
-        {{ if .Params.description }}
-        <div class="box-title">Description</div>
-        <p>{{ .Params.description }}</p>
-        {{ end }}
-        
-        {{ if .Params.install }}
-        <div style="margin-top: 10px;">
-            <strong>Installation:</strong>
-            <pre style="margin-top: 5px;">{{ .Params.install }}</pre>
-        </div>
-        {{ end }}
-        
-        {{ if .Params.github }}
-        <div style="margin-top: 10px;">
-            <strong>Source:</strong> <a href="{{ .Params.github }}">{{ .Params.github }}</a>
-        </div>
-        {{ end }}
+  <h1>{{ .Title }}</h1>
+
+  {{ if or .Params.description .Params.github .Params.install }}
+  <div class="box">
+    {{ if .Params.description }}
+    <div class="box-title">Description</div>
+    <p>{{ .Params.description }}</p>
+    {{ end }} {{ if .Params.install }}
+    <div style="margin-top: 10px">
+      <strong>Installation:</strong>
+      <pre style="margin-top: 5px">{{ .Params.install }}</pre>
+    </div>
+    {{ end }} {{ if .Params.github }}
+    <div style="margin-top: 10px">
+      <strong>Source:</strong>
+      <a href="{{ .Params.github }}">{{ .Params.github }}</a>
     </div>
     {{ end }}
-    
-    <div class="content">
-        {{ .Content }}
-    </div>
-    
-    <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border-color); color: var(--dim-fg); font-size: 11px;">
-        Last modified: {{ .Date.Format "2006-01-02 15:04:05" }}
-        {{ if .Params.tags }} | Tags: {{ range .Params.tags }}{{ . }} {{ end }}{{ end }}
-    </div>
+  </div>
+  {{ end }}
+
+  <div class="content">{{ .Content }}</div>
+
+  <div
+    style="
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-color);
+      color: var(--dim-fg);
+      font-size: 11px;
+    "
+  >
+    Last modified: {{ .Date.Format "2006-01-02 15:04:05" }} {{ if .Params.tags
+    }} | Tags: {{ range .Params.tags }}{{ . }} {{ end }}{{ end }}
+  </div>
 </article>
 {{ end }}
+

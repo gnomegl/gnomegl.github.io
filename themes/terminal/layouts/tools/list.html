@@ -1,51 +1,82 @@
 {{ define "main" }}
 <div class="tools-list">
-    <h1>Tools Catalog</h1>
+  <h1 style="margin:0">Tools Catalog</h1>
 
-    <div class="global-search-box">
-        <input type="text" id="global-tool-search" placeholder="Search all tools..." autocomplete="off">
-    </div>
+  <div class="global-search-box">
+    <input
+      type="text"
+      id="global-tool-search"
+      placeholder="Search all tools..."
+      autocomplete="off"
+      style="border:0"
+    />
+  </div>
 
-    <p>{{ len .Pages }} tools available.</p>
-    
-    {{ $basherTools := where .Pages ".Params.type" "!=" "go" }}
-    {{ $goTools := where .Pages ".Params.type" "go" }}
-    
-    <h2>Basher Tools</h2>
-    <p>{{ len $basherTools }} tools installable via <a href="https://github.com/basherpm/basher">basher</a></p>
-    
-    <div class="tool-grid">
-        {{ range $basherTools }}
-        <div class="tool-card" data-tool-name="{{ .Title | lower }}" data-tool-desc="{{ .Params.description | lower }}">
-            <div class="tool-name"><a href="{{ .Permalink }}">{{ .Title }}</a></div>
-            <div class="tool-desc">{{ .Params.description }}</div>
-            <div class="tool-meta">
-                {{ if .Params.github }}<a href="{{ .Params.github }}">source</a>{{ end }}
-                {{ if .Params.install }} | <a href="#" onclick="navigator.clipboard.writeText('{{ .Params.install }}'); alert('Copied to clipboard'); return false;">copy cmd</a>{{ end }}
-            </div>
-        </div>
-        {{ end }}
+  <p>{{ len .Pages }} tools available.</p>
+
+  {{ $basherTools := where .Pages ".Params.type" "!=" "go" }} {{ $goTools :=
+  where .Pages ".Params.type" "go" }}
+
+  <h2>Basher Tools</h2>
+  <p>
+    {{ len $basherTools }} tools installable via
+    <a href="https://github.com/basherpm/basher">basher</a>
+  </p>
+
+  <details class="accordion" style="margin-top: 20px">
+    <summary class="accordion-header">Install Basher</summary>
+    <div class="accordion-content">
+      <pre>
+curl -s https://raw.githubusercontent.com/basherpm/basher/master/install.sh | bash</pre
+      >
     </div>
-    
-    <div class="box" style="margin-top: 20px;">
-        <div class="box-title">Quick Start</div>
-        <pre>curl -s https://raw.githubusercontent.com/basherpm/basher/master/install.sh | bash</pre>
+  </details>
+
+  <div class="tool-grid">
+    {{ range $basherTools }}
+    <div
+      class="tool-card"
+      data-tool-name="{{ .Title | lower }}"
+      data-tool-desc="{{ .Params.description | lower }}"
+    >
+      <div class="tool-name"><a href="{{ .Permalink }}">{{ .Title }}</a></div>
+      <div class="tool-desc">{{ .Params.description }}</div>
+      <div class="tool-meta">
+        {{ if .Params.github }}<a href="{{ .Params.github }}">source</a>{{ end
+        }} {{ if .Params.install }} |
+        <a
+          href="#"
+          onclick="navigator.clipboard.writeText('{{ .Params.install }}'); alert('Copied to clipboard'); return false;"
+          >copy cmd</a
+        >{{ end }}
+      </div>
     </div>
-    
-    <h2 style="margin-top: 40px;">Go Tools</h2>
-    <p>{{ len $goTools }} tools installable via go install</p>
-    
-    <div class="tool-grid">
-        {{ range $goTools }}
-        <div class="tool-card" data-tool-name="{{ .Title | lower }}" data-tool-desc="{{ .Params.description | lower }}">
-            <div class="tool-name"><a href="{{ .Permalink }}">{{ .Title }}</a></div>
-            <div class="tool-desc">{{ .Params.description }}</div>
-            <div class="tool-meta">
-                {{ if .Params.github }}<a href="{{ .Params.github }}">source</a>{{ end }}
-                {{ if .Params.install }} | <a href="#" onclick="navigator.clipboard.writeText('{{ .Params.install }}'); alert('Copied to clipboard'); return false;">copy cmd</a>{{ end }}
-            </div>
-        </div>
-        {{ end }}
+    {{ end }}
+  </div>
+
+  <h2 style="margin-top: 40px">Go Tools</h2>
+  <p>{{ len $goTools }} tools installable via go install</p>
+
+  <div class="tool-grid">
+    {{ range $goTools }}
+    <div
+      class="tool-card"
+      data-tool-name="{{ .Title | lower }}"
+      data-tool-desc="{{ .Params.description | lower }}"
+    >
+      <div class="tool-name"><a href="{{ .Permalink }}">{{ .Title }}</a></div>
+      <div class="tool-desc">{{ .Params.description }}</div>
+      <div class="tool-meta">
+        {{ if .Params.github }}<a href="{{ .Params.github }}">source</a>{{ end
+        }} {{ if .Params.install }} |
+        <a
+          href="#"
+          onclick="navigator.clipboard.writeText('{{ .Params.install }}'); alert('Copied to clipboard'); return false;"
+          >copy cmd</a
+        >{{ end }}
+      </div>
     </div>
+    {{ end }}
+  </div>
 </div>
 {{ end }}
