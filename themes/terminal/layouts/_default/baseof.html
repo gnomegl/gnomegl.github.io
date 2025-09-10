@@ -19,12 +19,19 @@
                 <ul>
                     <li><a href="/" {{ if .IsHome }}class="active"{{ end }}>Home</a></li>
                     <li><a href="/tools/" {{ if eq .Section "tools" }}class="active"{{ end }}>Tools</a></li>
-                    {{ if or (eq .Section "tools") (and (eq $.Permalink .Permalink) (in $.Permalink "tools")) }}
-                      {{ range where .Site.RegularPages "Section" "tools" | first 10 }}
-                      <li><a href="{{ .Permalink }}" {{ if eq $.Permalink .Permalink }}class="active"{{ end }}>└─ {{ .Title }}</a></li>
-                      {{ end }}
+                </ul>
+                {{ if or (eq .Section "tools") (and (eq $.Permalink .Permalink) (in $.Permalink "tools")) }}
+                <div class="search-box">
+                    <input type="text" id="tool-search" placeholder="Filter tools..." autocomplete="off">
+                </div>
+                <ul id="tools-list">
+                    {{ range where .Site.RegularPages "Section" "tools" }}
+                    <li class="tool-item" data-name="{{ .Title | lower }}">
+                        <a href="{{ .Permalink }}" {{ if eq $.Permalink .Permalink }}class="active"{{ end }}>└─ {{ .Title }}</a>
+                    </li>
                     {{ end }}
                 </ul>
+                {{ end }}
             </nav>
             <div class="sidebar-footer">
                 {{ now.Format "15:04:05" }}<br>
@@ -58,6 +65,44 @@
             }
         }
     });
+    
+    // Tool search functionality
+    const searchInput = document.getElementById('tool-search');
+    const toolsList = document.getElementById('tools-list');
+    
+    if (searchInput && toolsList) {
+        const toolItems = toolsList.querySelectorAll('.tool-item');
+        
+        searchInput.addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            
+            toolItems.forEach(item => {
+                const toolName = item.dataset.name;
+                if (toolName.includes(searchTerm)) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+        
+        // Focus search box on '/' key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === '/' && document.activeElement !== searchInput) {
+                e.preventDefault();
+                searchInput.focus();
+            }
+        });
+        
+        // Clear search on Escape
+        searchInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                this.value = '';
+                this.dispatchEvent(new Event('input'));
+                this.blur();
+            }
+        });
+    }
     </script>
 </body>
 </html>

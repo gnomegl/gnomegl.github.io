@@ -60,3 +60,15 @@ EOF
 done <<< "$repos"
 
 echo "Tools catalog updated!"
+
+# Rebuild Hugo site to update sidebar
+echo "Rebuilding Hugo site..."
+if command -v hugo &> /dev/null; then
+    hugo --minify
+    echo "Site rebuilt successfully!"
+    echo "Sidebar updated with new tools and search/filter functionality."
+    echo "Use '/' to focus search box, type to filter tools in real-time."
+else
+    echo "Hugo not found. Please install Hugo to rebuild the site."
+    echo "Tools updated but sidebar won't reflect changes until site is rebuilt."
+fi
