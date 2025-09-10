@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Script to add a tool to the catalog
 # Usage: ./add_tool.sh <name> <type> [install_path]
 # Types: basher, go, npm, pip, etc.
 
@@ -16,7 +15,6 @@ NAME="$1"
 TYPE="$2"
 INSTALL_PATH="$3"
 
-# Fetch repo info from GitHub
 echo "Fetching repository info for gnomegl/${NAME}..."
 REPO_INFO=$(gh repo view "gnomegl/${NAME}" --json description,url,repositoryTopics 2>/dev/null)
 
@@ -29,10 +27,8 @@ DESC=$(echo "$REPO_INFO" | jq -r '.description // "No description"')
 GITHUB_URL=$(echo "$REPO_INFO" | jq -r '.url')
 TOPICS=$(echo "$REPO_INFO" | jq -r '.repositoryTopics[].name' 2>/dev/null)
 
-# Check if repo has basher topic
 HAS_BASHER=$(echo "$TOPICS" | grep -q "basher" && echo "true" || echo "false")
 
-# Determine install command based on type
 case "$TYPE" in
     go)
         if [ -z "$INSTALL_PATH" ]; then
@@ -54,7 +50,6 @@ case "$TYPE" in
         ;;
 esac
 
-# Create the tool markdown file
 cat > "content/tools/${NAME}.md" << EOF
 ---
 title: "${NAME}"
@@ -70,7 +65,6 @@ date: $(date -Iseconds)
 
 EOF
 
-# Add primary installation method
 cat >> "content/tools/${NAME}.md" << EOF
 \`\`\`bash
 ${INSTALL_CMD}
@@ -78,7 +72,6 @@ ${INSTALL_CMD}
 
 EOF
 
-# Add basher installation if applicable and not primary
 if [ "$HAS_BASHER" == "true" ] && [ "$TYPE" != "basher" ]; then
     cat >> "content/tools/${NAME}.md" << EOF
 ### Alternative Installation (Basher)

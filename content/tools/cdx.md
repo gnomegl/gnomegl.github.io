@@ -5,7 +5,8 @@ github: "https://github.com/gnomegl/cdx"
 install: "basher install gnomegl/cdx"
 type: "basher"
 category: "osint"
-date: 2025-09-10T11:13:43-04:00
+topics: ["bash", "basher", "osint", "wayback-machine", "web-archive"]
+date: 2025-09-10T11:24:36-04:00
 ---
 
 ## Installation

@@ -5,7 +5,8 @@ github: "https://github.com/gnomegl/twhist"
 install: "basher install gnomegl/twhist"
 type: "basher"
 category: "osint"
-date: 2025-09-10T11:13:43-04:00
+topics: ["bash", "basher", "osint", "social-media", "twitter"]
+date: 2025-09-10T11:24:35-04:00
 ---
 
 ## Installation

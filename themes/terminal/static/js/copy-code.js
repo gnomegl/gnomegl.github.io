@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const codeBlocks = document.querySelectorAll("pre");
 
   codeBlocks.forEach(function (block) {
-    // Skip if button already exists (for dynamically loaded content)
     if (block.querySelector(".code-copy-btn")) return;
 
     const text = (

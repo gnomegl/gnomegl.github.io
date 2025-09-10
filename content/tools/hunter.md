@@ -5,7 +5,8 @@ github: "https://github.com/gnomegl/hunter"
 install: "basher install gnomegl/hunter"
 type: "basher"
 category: "osint"
-date: 2025-09-10T11:13:43-04:00
+topics: ["bash", "basher", "email", "hunter-io", "osint"]
+date: 2025-09-10T11:24:36-04:00
 ---
 
 ## Installation

@@ -3,13 +3,18 @@
   <h1 style="margin: 0">Tools Catalog</h1>
 
   <div class="global-search-box">
-    <input
-      type="text"
-      id="global-tool-search"
-      placeholder="Search all tools..."
-      autocomplete="off"
-      style="border: 0"
-    />
+    <div style="position: relative;">
+      <svg style="position: absolute; left: 8px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; fill: var(--dim-fg); pointer-events: none;" viewBox="0 0 24 24">
+        <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+      </svg>
+      <input
+        type="text"
+        id="global-tool-search"
+        placeholder="Search tools, topics..."
+        autocomplete="off"
+        style="border: 0; padding-left: 32px;"
+      />
+    </div>
   </div>
 
   <p>{{ len .Pages }} tools available.</p>
@@ -36,9 +41,17 @@
       class="tool-card"
       data-tool-name="{{ .Title | lower }}"
       data-tool-desc="{{ .Params.description | lower }}"
+      data-tool-topics="{{ delimit .Params.topics " " | lower }}"
     >
       <div class="tool-name"><a href="{{ .Permalink }}">{{ .Title }}</a></div>
       <div class="tool-desc">{{ .Params.description }}</div>
+      {{ if .Params.topics }}
+      <div class="tool-topics">
+        {{ range .Params.topics }}
+        <span class="topic-tag">{{ . }}</span>
+        {{ end }}
+      </div>
+      {{ end }}
       <div class="tool-meta">
         {{ if .Params.github }}<a href="{{ .Params.github }}">source</a>{{ end
         }} {{ if .Params.install }} |
@@ -61,9 +74,17 @@
       class="tool-card"
       data-tool-name="{{ .Title | lower }}"
       data-tool-desc="{{ .Params.description | lower }}"
+      data-tool-topics="{{ delimit .Params.topics " " | lower }}"
     >
       <div class="tool-name"><a href="{{ .Permalink }}">{{ .Title }}</a></div>
       <div class="tool-desc">{{ .Params.description }}</div>
+      {{ if .Params.topics }}
+      <div class="tool-topics">
+        {{ range .Params.topics }}
+        <span class="topic-tag">{{ . }}</span>
+        {{ end }}
+      </div>
+      {{ end }}
       <div class="tool-meta">
         {{ if .Params.github }}<a href="{{ .Params.github }}">source</a>{{ end
         }} {{ if .Params.install }} |

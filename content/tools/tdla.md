@@ -5,7 +5,8 @@ github: "https://github.com/gnomegl/tdla"
 install: "basher install gnomegl/tdla"
 type: "basher"
 category: "osint"
-date: 2025-09-10T11:13:43-04:00
+topics: ["bash", "basher", "downloader", "tdl", "telegram"]
+date: 2025-09-10T11:24:36-04:00
 ---
 
 ## Installation

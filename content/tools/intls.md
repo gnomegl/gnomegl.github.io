@@ -5,7 +5,8 @@ github: "https://github.com/gnomegl/intls"
 install: "basher install gnomegl/intls"
 type: "basher"
 category: "osint"
-date: 2025-09-10T11:13:43-04:00
+topics: ["bash", "basher", "intelligence", "osint"]
+date: 2025-09-10T11:24:36-04:00
 ---
 
 ## Installation

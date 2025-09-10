@@ -8,6 +8,9 @@ theme = 'terminal'
   description = "terminal-based osint tools and utilities"
 
 [markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      hardWraps = true
   [markup.highlight]
     style = 'terminal'
     lineNos = true
