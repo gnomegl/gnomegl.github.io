@@ -3,8 +3,9 @@ title: "toto"
 description: "osint automation tool [basher package]"
 github: "https://github.com/gnomegl/toto"
 install: "basher install gnomegl/toto"
+type: "basher"
 category: "osint"
-date: 2025-09-10T10:31:40-04:00
+date: 2025-09-10T11:13:43-04:00
 ---
 
 ## Installation

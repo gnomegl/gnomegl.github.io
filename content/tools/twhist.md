@@ -3,8 +3,9 @@ title: "twhist"
 description: "twitter history analyzer [basher package]"
 github: "https://github.com/gnomegl/twhist"
 install: "basher install gnomegl/twhist"
+type: "basher"
 category: "osint"
-date: 2025-09-10T10:31:40-04:00
+date: 2025-09-10T11:13:43-04:00
 ---
 
 ## Installation

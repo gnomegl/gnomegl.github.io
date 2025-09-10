@@ -1,6 +1,6 @@
 {{ define "main" }}
 <div class="tools-list">
-  <h1 style="margin:0">Tools Catalog</h1>
+  <h1 style="margin: 0">Tools Catalog</h1>
 
   <div class="global-search-box">
     <input
@@ -8,7 +8,7 @@
       id="global-tool-search"
       placeholder="Search all tools..."
       autocomplete="off"
-      style="border:0"
+      style="border: 0"
     />
   </div>
 
@@ -26,9 +26,7 @@
   <details class="accordion" style="margin-top: 20px">
     <summary class="accordion-header">Install Basher</summary>
     <div class="accordion-content">
-      <pre>
-curl -s https://raw.githubusercontent.com/basherpm/basher/master/install.sh | bash</pre
-      >
+      <pre><code class="language-bash">curl -s https://raw.githubusercontent.com/basherpm/basher/master/install.sh | bash && eval "$(basher init - bash)" # or zsh, fish, sh etc</code></pre>
     </div>
   </details>
 

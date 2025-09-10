@@ -571,3 +571,91 @@ details[open] .accordion-header::before {
   font-family: monospace;
 }
 
+/* Prism.js syntax highlighting overrides for terminal theme */
+pre[class*="language-"],
+code[class*="language-"] {
+  background: var(--bg-color) !important;
+  color: var(--fg-color) !important;
+  text-shadow: none !important;
+  font-family: "Courier New", "Courier", monospace !important;
+  font-size: 13px !important;
+}
+
+pre[class*="language-"] {
+  padding: 12px !important;
+  padding-left: 45px !important;
+  border: 1px solid var(--border-color) !important;
+  margin: 15px 0 !important;
+  overflow: auto !important;
+  border-radius: 0 !important;
+}
+
+/* Token colors for terminal theme */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #606060 !important;
+}
+
+.token.punctuation {
+  color: #b0b0b0 !important;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #ff7979 !important;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #50fa7b !important;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #f1fa8c !important;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #bd93f9 !important;
+}
+
+.token.function,
+.token.class-name {
+  color: #8be9fd !important;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: #ffb86c !important;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+

@@ -3,8 +3,9 @@ title: "igslurp"
 description: "instagram data collection tool [basher package]"
 github: "https://github.com/gnomegl/igslurp"
 install: "basher install gnomegl/igslurp"
+type: "basher"
 category: "osint"
-date: 2025-09-10T10:31:41-04:00
+date: 2025-09-10T11:13:43-04:00
 ---
 
 ## Installation

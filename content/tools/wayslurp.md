@@ -3,8 +3,9 @@ title: "wayslurp"
 description: "wayback machine bulk downloader [basher package]"
 github: "https://github.com/gnomegl/wayslurp"
 install: "basher install gnomegl/wayslurp"
+type: "basher"
 category: "osint"
-date: 2025-09-10T10:31:40-04:00
+date: 2025-09-10T11:13:43-04:00
 ---
 
 ## Installation

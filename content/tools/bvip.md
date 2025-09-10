@@ -1,10 +1,11 @@
 ---
 title: "bvip"
-description: "bulk ip lookup tool [basher package]"
+description: "data lookup tool [basher package]"
 github: "https://github.com/gnomegl/bvip"
 install: "basher install gnomegl/bvip"
+type: "basher"
 category: "osint"
-date: 2025-09-10T10:31:40-04:00
+date: 2025-09-10T11:13:43-04:00
 ---
 
 ## Installation
@@ -15,7 +16,7 @@ basher install gnomegl/bvip
 
 ## Description
 
-bulk ip lookup tool [basher package]
+data lookup tool [basher package]
 
 ## Usage
 

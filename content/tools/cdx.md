@@ -3,8 +3,9 @@ title: "cdx"
 description: "internet archive cdx api search for historical web data [basher package]"
 github: "https://github.com/gnomegl/cdx"
 install: "basher install gnomegl/cdx"
+type: "basher"
 category: "osint"
-date: 2025-09-10T10:31:41-04:00
+date: 2025-09-10T11:13:43-04:00
 ---
 
 ## Installation

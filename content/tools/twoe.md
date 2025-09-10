@@ -1,11 +1,11 @@
 ---
 title: "twoe"
-description: "Twitter OSINT tool"
+description: "twitter osint tool"
 github: "https://github.com/gnomegl/twoe"
 install: "go install github.com/gnomegl/twoe@latest"
 type: "go"
 category: "osint"
-date: 2025-09-10T10:31:40-04:00
+date: 2025-09-10T11:07:44-04:00
 ---
 
 ## Installation
@@ -16,7 +16,7 @@ go install github.com/gnomegl/twoe@latest
 
 ## Description
 
-Twitter OSINT tool
+twitter osint tool
 
 ## Usage
 

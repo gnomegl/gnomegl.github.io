@@ -3,8 +3,9 @@ title: "merklemap"
 description: "certificate transparency search for domains and subdomains [basher package]"
 github: "https://github.com/gnomegl/merklemap"
 install: "basher install gnomegl/merklemap"
+type: "basher"
 category: "osint"
-date: 2025-09-10T10:31:41-04:00
+date: 2025-09-10T11:13:43-04:00
 ---
 
 ## Installation

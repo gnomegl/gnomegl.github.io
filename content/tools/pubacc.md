@@ -3,8 +3,9 @@ title: "pubacc"
 description: "public account checker [basher package]"
 github: "https://github.com/gnomegl/pubacc"
 install: "basher install gnomegl/pubacc"
+type: "basher"
 category: "osint"
-date: 2025-09-10T10:31:40-04:00
+date: 2025-09-10T11:13:43-04:00
 ---
 
 ## Installation
