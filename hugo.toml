@@ -1,0 +1,14 @@
+baseURL = 'https://gnomegl.github.io/'
+languageCode = 'en-us'
+title = 'gnome@gl'
+theme = 'terminal'
+
+[params]
+  author = "gnome"
+  description = "terminal-based osint tools and utilities"
+
+[markup]
+  [markup.highlight]
+    style = 'monokai'
+    lineNos = true
+    lineNumbersInTable = true

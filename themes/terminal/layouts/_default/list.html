@@ -1,0 +1,26 @@
+{{ define "main" }}
+<div class="list-content">
+    <h1>{{ .Title }}</h1>
+    
+    {{ .Content }}
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Modified</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{ range .Pages }}
+            <tr>
+                <td><a href="{{ .Permalink }}">{{ .Title }}</a></td>
+                <td>{{ .Params.description | truncate 60 }}</td>
+                <td style="color: var(--dim-fg);">{{ .Date.Format "2006-01-02" }}</td>
+            </tr>
+            {{ end }}
+        </tbody>
+    </table>
+</div>
+{{ end }}

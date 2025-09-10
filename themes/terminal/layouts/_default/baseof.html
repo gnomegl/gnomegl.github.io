@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
+    <meta name="description" content="{{ .Site.Params.description }}">
+    <link rel="stylesheet" href="{{ "css/terminal.css" | relURL }}">
+</head>
+<body>
+    <div class="tui-container">
+        <button class="sidebar-toggle" onclick="document.querySelector('.sidebar').classList.toggle('active')">☰</button>
+        
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                {{ .Site.Title }}
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="/" {{ if .IsHome }}class="active"{{ end }}>Home</a></li>
+                    <li><a href="/tools/" {{ if eq .Section "tools" }}class="active"{{ end }}>Tools</a></li>
+                    {{ if or (eq .Section "tools") (and (eq $.Permalink .Permalink) (in $.Permalink "tools")) }}
+                      {{ range where .Site.RegularPages "Section" "tools" | first 10 }}
+                      <li><a href="{{ .Permalink }}" {{ if eq $.Permalink .Permalink }}class="active"{{ end }}>└─ {{ .Title }}</a></li>
+                      {{ end }}
+                    {{ end }}
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                {{ now.Format "15:04:05" }}<br>
+                {{ .Site.Params.author }}
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="header-bar">
+                <div class="header-title">{{ .Title }}</div>
+                <div class="header-info">{{ .Site.Title }} | {{ now.Format "2006-01-02" }}</div>
+            </div>
+            
+            <div class="content-area">
+                {{ block "main" . }}{{ end }}
+            </div>
+            
+            <div class="status-bar">
+                <span>{{ if .File }}{{ .File.Path }}{{ else }}index{{ end }}</span>
+                <span>UTF-8 | LF | {{ .Site.Language.Lang }}</span>
+            </div>
+        </main>
+    </div>
+    
+    <script>
+    document.addEventListener('keydown', function(e) {
+        if (e.altKey) {
+            switch(e.key) {
+                case '1': window.location.href = '/'; break;
+                case '2': window.location.href = '/tools/'; break;
+            }
+        }
+    });
+    </script>
+</body>
+</html>
