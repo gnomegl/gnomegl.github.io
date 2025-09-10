@@ -11,6 +11,7 @@ theme = 'terminal'
   [markup.goldmark]
     [markup.goldmark.renderer]
       hardWraps = true
+      unsafe = true
   [markup.highlight]
     style = 'terminal'
     lineNos = true
