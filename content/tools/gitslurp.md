@@ -19,11 +19,6 @@ OSINT tool to analyze GitHub user activity and highlights their contributions ac
 - Repository context showing own repos vs forks
 - Organization scanning capabilities
 
-## Installation
-
-```bash
-go install github.com/gnomegl/gitslurp@latest
-```
 
 ## Usage
 

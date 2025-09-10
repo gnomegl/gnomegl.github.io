@@ -9,6 +9,6 @@ theme = 'terminal'
 
 [markup]
   [markup.highlight]
-    style = 'monokai'
+    style = 'terminal'
     lineNos = true
     lineNumbersInTable = true

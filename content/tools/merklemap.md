@@ -7,11 +7,6 @@ category: "osint"
 date: 2025-09-09T23:27:23-04:00
 ---
 
-## Installation
-
-```bash
-basher install gnomegl/merklemap
-```
 
 ## Description
 

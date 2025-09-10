@@ -1,7 +1,11 @@
 {{ define "main" }}
 <div class="tools-list">
     <h1>Tools Catalog</h1>
-    
+
+    <div class="global-search-box">
+        <input type="text" id="global-tool-search" placeholder="Search all tools..." autocomplete="off">
+    </div>
+
     <p>{{ len .Pages }} tools available.</p>
     
     {{ $basherTools := where .Pages ".Params.type" "!=" "go" }}
@@ -12,7 +16,7 @@
     
     <div class="tool-grid">
         {{ range $basherTools }}
-        <div class="tool-card">
+        <div class="tool-card" data-tool-name="{{ .Title | lower }}" data-tool-desc="{{ .Params.description | lower }}">
             <div class="tool-name"><a href="{{ .Permalink }}">{{ .Title }}</a></div>
             <div class="tool-desc">{{ .Params.description }}</div>
             <div class="tool-meta">
@@ -33,7 +37,7 @@
     
     <div class="tool-grid">
         {{ range $goTools }}
-        <div class="tool-card">
+        <div class="tool-card" data-tool-name="{{ .Title | lower }}" data-tool-desc="{{ .Params.description | lower }}">
             <div class="tool-name"><a href="{{ .Permalink }}">{{ .Title }}</a></div>
             <div class="tool-desc">{{ .Params.description }}</div>
             <div class="tool-meta">

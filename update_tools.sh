@@ -1,9 +1,7 @@
 #!/bin/bash
 
-# Auto-update tools catalog from GitHub repos
 echo "Updating tools catalog from GitHub..."
 
-# Get all repos with Shell as primary language or basher in description
 repos=$(gh repo list --limit 100 --json name,description,primaryLanguage,url | \
   jq -r '.[] | 
     select(
@@ -12,10 +10,8 @@ repos=$(gh repo list --limit 100 --json name,description,primaryLanguage,url | \
     ) | 
     @json')
 
-# Clear existing tools
 rm -f content/tools/*.md
 
-# Create tool pages
 while IFS= read -r repo; do
   name=$(echo "$repo" | jq -r '.name')
   desc=$(echo "$repo" | jq -r '.description // "No description"')
@@ -61,7 +57,6 @@ done <<< "$repos"
 
 echo "Tools catalog updated!"
 
-# Rebuild Hugo site to update sidebar
 echo "Rebuilding Hugo site..."
 if command -v hugo &> /dev/null; then
     hugo --minify

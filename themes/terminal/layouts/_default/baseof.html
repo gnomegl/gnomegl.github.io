@@ -5,33 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
     <meta name="description" content="{{ .Site.Params.description }}">
+    <link rel="icon" type="image/x-icon" href="{{ "favicon.ico" | relURL }}">
+    <link rel="icon" type="image/png" href="{{ "favicon.png" | relURL }}">
     <link rel="stylesheet" href="{{ "css/terminal.css" | relURL }}">
+    <script src="{{ "js/copy-code.js" | relURL }}" defer></script>
 </head>
 <body>
     <div class="tui-container">
-        <button class="sidebar-toggle" onclick="document.querySelector('.sidebar').classList.toggle('active')">☰</button>
-        
         <aside class="sidebar">
-            <div class="sidebar-header">
-                {{ .Site.Title }}
-            </div>
             <nav class="sidebar-nav">
                 <ul>
                     <li><a href="/" {{ if .IsHome }}class="active"{{ end }}>Home</a></li>
                     <li><a href="/tools/" {{ if eq .Section "tools" }}class="active"{{ end }}>Tools</a></li>
                 </ul>
-                {{ if or (eq .Section "tools") (and (eq $.Permalink .Permalink) (in $.Permalink "tools")) }}
-                <div class="search-box">
-                    <input type="text" id="tool-search" placeholder="Filter tools..." autocomplete="off">
-                </div>
-                <ul id="tools-list">
-                    {{ range where .Site.RegularPages "Section" "tools" }}
-                    <li class="tool-item" data-name="{{ .Title | lower }}">
-                        <a href="{{ .Permalink }}" {{ if eq $.Permalink .Permalink }}class="active"{{ end }}>└─ {{ .Title }}</a>
-                    </li>
-                    {{ end }}
-                </ul>
-                {{ end }}
+                 {{ if or (eq .Section "tools") (and (eq $.Permalink .Permalink) (in $.Permalink "tools")) }}
+                 <ul id="tools-list">
+                     {{ range where .Site.RegularPages "Section" "tools" }}
+                     <li class="tool-item" data-name="{{ .Title | lower }}">
+                         <a href="{{ .Permalink }}" {{ if eq $.Permalink .Permalink }}class="active"{{ end }}>└─ {{ .Title }}</a>
+                     </li>
+                     {{ end }}
+                 </ul>
+                 {{ end }}
             </nav>
             <div class="sidebar-footer">
                 {{ now.Format "15:04:05" }}<br>
@@ -41,8 +36,10 @@
 
         <main class="main-content">
             <div class="header-bar">
-                <div class="header-title">{{ .Title }}</div>
-                <div class="header-info">{{ .Site.Title }} | {{ now.Format "2006-01-02" }}</div>
+                <button class="sidebar-toggle" onclick="document.querySelector('.sidebar').classList.toggle('active')">☰</button>
+                <img src="/groomlake.svg" alt="Groom Lake" class="header-logo">
+                <div class="header-title">{{ .Site.Title }}</div>
+                <div class="header-info">{{ now.Format "2006-01-02" }}</div>
             </div>
             
             <div class="content-area">
@@ -57,7 +54,25 @@
     </div>
     
     <script>
+    document.addEventListener('click', function(e) {
+        const sidebar = document.querySelector('.sidebar');
+        const toggle = document.querySelector('.sidebar-toggle');
+        
+        if (sidebar && sidebar.classList.contains('active')) {
+            if (!sidebar.contains(e.target) && !toggle.contains(e.target)) {
+                sidebar.classList.remove('active');
+            }
+        }
+    });
+    
     document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            const sidebar = document.querySelector('.sidebar');
+            if (sidebar && sidebar.classList.contains('active')) {
+                sidebar.classList.remove('active');
+            }
+        }
+        
         if (e.altKey) {
             switch(e.key) {
                 case '1': window.location.href = '/'; break;
@@ -66,36 +81,35 @@
         }
     });
     
-    // Tool search functionality
-    const searchInput = document.getElementById('tool-search');
-    const toolsList = document.getElementById('tools-list');
-    
-    if (searchInput && toolsList) {
-        const toolItems = toolsList.querySelectorAll('.tool-item');
-        
-        searchInput.addEventListener('input', function(e) {
+
+
+    const globalSearchInput = document.getElementById('global-tool-search');
+    const toolCards = document.querySelectorAll('.tool-card');
+
+    if (globalSearchInput && toolCards.length > 0) {
+        globalSearchInput.addEventListener('input', function(e) {
             const searchTerm = e.target.value.toLowerCase();
-            
-            toolItems.forEach(item => {
-                const toolName = item.dataset.name;
-                if (toolName.includes(searchTerm)) {
-                    item.style.display = '';
+
+            toolCards.forEach(card => {
+                const toolName = card.dataset.toolName || '';
+                const toolDesc = card.dataset.toolDesc || '';
+
+                if (toolName.includes(searchTerm) || toolDesc.includes(searchTerm)) {
+                    card.style.display = '';
                 } else {
-                    item.style.display = 'none';
+                    card.style.display = 'none';
                 }
             });
         });
-        
-        // Focus search box on '/' key
+
         document.addEventListener('keydown', function(e) {
-            if (e.key === '/' && document.activeElement !== searchInput) {
+            if (e.key === '/' && document.activeElement !== globalSearchInput) {
                 e.preventDefault();
-                searchInput.focus();
+                globalSearchInput.focus();
             }
         });
-        
-        // Clear search on Escape
-        searchInput.addEventListener('keydown', function(e) {
+
+        globalSearchInput.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 this.value = '';
                 this.dispatchEvent(new Event('input'));

@@ -18,11 +18,6 @@ Command-line tool to fetch tweets using Twitter's public oEmbed API. Minimal, ef
 - Error handling with retries
 - Optional progress bar
 
-## Installation
-
-```bash
-go install github.com/gnomegl/twoe@latest
-```
 
 ## Usage
 

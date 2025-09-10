@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Create tool pages from GitHub repos
 tools=(
 "wayslurp:wayback machine bulk downloader"
 "twoe:twitter osint tool"
