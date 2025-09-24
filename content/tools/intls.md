@@ -4,7 +4,6 @@ description: "intel lookup service [basher package]"
 github: "https://github.com/gnomegl/intls"
 install: "basher install gnomegl/intls"
 type: "basher"
-category: "osint"
 topics: ["bash", "basher", "intelligence", "osint"]
 date: 2025-09-10T11:24:36-04:00
 ---

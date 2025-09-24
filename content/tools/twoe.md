@@ -4,7 +4,6 @@ description: "twitter osint tool"
 github: "https://github.com/gnomegl/twoe"
 install: "go install github.com/gnomegl/twoe@latest"
 type: "go"
-category: "osint"
 topics: ["osint", "twitter", "go"]
 date: 2025-09-10T11:24:35-04:00
 ---

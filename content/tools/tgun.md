@@ -4,7 +4,6 @@ description: "tg un checker"
 github: "https://github.com/gnomegl/tgun"
 install: "go install github.com/gnomegl/tgun@latest"
 type: "go"
-category: "osint"
 topics: []
 date: 2025-09-10T11:24:37-04:00
 ---

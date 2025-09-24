@@ -4,7 +4,6 @@ description: "internet archive cdx api search for historical web data [basher pa
 github: "https://github.com/gnomegl/cdx"
 install: "basher install gnomegl/cdx"
 type: "basher"
-category: "osint"
 topics: ["bash", "basher", "osint", "wayback-machine", "web-archive"]
 date: 2025-09-10T11:24:36-04:00
 ---

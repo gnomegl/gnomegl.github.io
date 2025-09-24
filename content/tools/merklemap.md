@@ -4,7 +4,6 @@ description: "certificate transparency search for domains and subdomains [basher
 github: "https://github.com/gnomegl/merklemap"
 install: "basher install gnomegl/merklemap"
 type: "basher"
-category: "osint"
 topics: ["bash", "basher", "certificate-transparency", "osint", "subdomain-enumeration"]
 date: 2025-09-10T11:24:36-04:00
 ---

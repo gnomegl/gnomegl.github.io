@@ -4,7 +4,6 @@ description: "search tool [basher package]"
 github: "https://github.com/gnomegl/sx"
 install: "basher install gnomegl/sx"
 type: "basher"
-category: "osint"
 topics: ["bash", "basher", "osint", "search"]
 date: 2025-09-10T11:24:36-04:00
 ---

@@ -4,7 +4,6 @@ description: "Processes credential files and formats them to be ready to index i
 github: "https://github.com/gnomegl/ulp"
 install: "go install github.com/gnomegl/ulp@latest"
 type: "go"
-category: "osint"
 topics: []
 date: 2025-09-10T11:24:37-04:00
 ---

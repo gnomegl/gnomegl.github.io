@@ -4,7 +4,6 @@ description: "Analyze GitHub user's commit history across repositories"
 github: "https://github.com/gnomegl/gitslurp"
 install: "go install github.com/gnomegl/gitslurp@latest"
 type: "go"
-category: "osint"
 topics: ["git-history", "github", "osint", "go", "golang"]
 date: 2025-09-10T11:24:35-04:00
 ---

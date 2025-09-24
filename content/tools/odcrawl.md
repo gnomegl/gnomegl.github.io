@@ -4,7 +4,6 @@ description: "open directory crawler [basher package]"
 github: "https://github.com/gnomegl/odcrawl"
 install: "basher install gnomegl/odcrawl"
 type: "basher"
-category: "osint"
 topics: ["bash", "basher", "crawler", "open-directories"]
 date: 2025-09-10T11:24:36-04:00
 ---

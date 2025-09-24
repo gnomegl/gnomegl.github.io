@@ -4,7 +4,6 @@ description: "whoxy api client for domain intelligence [basher package]"
 github: "https://github.com/gnomegl/whoxy"
 install: "basher install gnomegl/whoxy"
 type: "basher"
-category: "osint"
 topics: ["bash", "basher", "domain-intelligence", "osint", "whois"]
 date: 2025-09-10T11:24:36-04:00
 ---

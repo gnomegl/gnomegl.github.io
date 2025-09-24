@@ -4,7 +4,6 @@ description: "Get information about a bssid, including location data through App
 github: "https://github.com/gnomegl/bssidx"
 install: "go install github.com/gnomegl/bssidx@latest"
 type: "go"
-category: "osint"
 topics: ["apple", "geolocation", "go", "osint", "wifi"]
 date: 2025-09-16T00:24:56-04:00
 ---

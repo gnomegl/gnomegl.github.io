@@ -4,7 +4,6 @@ description: "screen recording tool with audio [basher package]"
 github: "https://github.com/gnomegl/rcrd"
 install: "basher install gnomegl/rcrd"
 type: "basher"
-category: "osint"
 topics: ["bash", "basher", "ffmpeg", "screen-recorder"]
 date: 2025-09-10T11:24:36-04:00
 ---

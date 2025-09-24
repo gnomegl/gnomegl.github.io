@@ -4,7 +4,6 @@ description: "discord token validator and extractor [basher package]"
 github: "https://github.com/gnomegl/fdt"
 install: "basher install gnomegl/fdt"
 type: "basher"
-category: "osint"
 topics: ["bash", "basher", "discord", "token", "validator"]
 date: 2025-09-10T11:24:36-04:00
 ---

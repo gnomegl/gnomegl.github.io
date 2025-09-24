@@ -4,7 +4,6 @@ description: "gray hat warfare api client for exposed file search [basher packag
 github: "https://github.com/gnomegl/shrt"
 install: "basher install gnomegl/shrt"
 type: "basher"
-category: "osint"
 topics: ["bash", "basher", "exposed-files", "osint", "s3"]
 date: 2025-09-10T11:24:36-04:00
 ---

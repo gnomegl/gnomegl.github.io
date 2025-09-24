@@ -4,7 +4,6 @@ description: "twitter history analyzer [basher package]"
 github: "https://github.com/gnomegl/twhist"
 install: "basher install gnomegl/twhist"
 type: "basher"
-category: "osint"
 topics: ["bash", "basher", "osint", "social-media", "twitter"]
 date: 2025-09-10T11:24:35-04:00
 ---

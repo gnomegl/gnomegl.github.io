@@ -4,7 +4,6 @@ description: "Teleslurp is a command-line tool that allows you to search for and
 github: "https://github.com/gnomegl/teleslurp"
 install: "go install github.com/gnomegl/teleslurp@latest"
 type: "go"
-category: "osint"
 topics: []
 date: 2025-09-10T11:24:37-04:00
 ---

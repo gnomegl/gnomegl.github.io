@@ -4,7 +4,6 @@ description: "A high-performance wordlist mutation engine written in Go"
 github: "https://github.com/gnomegl/brutekit"
 install: "go install github.com/gnomegl/brutekit@latest"
 type: "go"
-category: "osint"
 topics: []
 date: 2025-09-10T11:24:37-04:00
 ---

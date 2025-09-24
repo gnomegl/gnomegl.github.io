@@ -26,6 +26,7 @@ fi
 DESC=$(echo "$REPO_INFO" | jq -r '.description // "No description"')
 GITHUB_URL=$(echo "$REPO_INFO" | jq -r '.url')
 TOPICS=$(echo "$REPO_INFO" | jq -r '.repositoryTopics[].name' 2>/dev/null)
+TOPICS_ARRAY=$(echo "$REPO_INFO" | jq -c '.repositoryTopics[].name' 2>/dev/null | jq -s '.' 2>/dev/null || echo '[]')
 
 HAS_BASHER=$(echo "$TOPICS" | grep -q "basher" && echo "true" || echo "false")
 
@@ -57,7 +58,7 @@ description: "${DESC}"
 github: "${GITHUB_URL}"
 install: "${INSTALL_CMD}"
 type: "${TYPE}"
-category: "osint"
+topics: ${TOPICS_ARRAY}
 date: $(date -Iseconds)
 ---
 
